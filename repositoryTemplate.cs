@@ -66,5 +66,11 @@ public class Repository<TEntity>:IBoatInspectorRepository<TEntity> where TEntity
             return await _context.Set<TEntity>().Where(predicate).FirstOrDefaultAsync();
         }
         
+        //remove
+        public void Remove(TEntity entity)
+        {
+            _context.Set<TEntity>().Remove(entity);
+        }
+        
         
 }
