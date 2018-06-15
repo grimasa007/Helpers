@@ -17,6 +17,13 @@ namespace Converters.Gallery
             return arr;
         }
         
+        //ImageSource from Byte array
+        private ImageSource ImageSourceFromByteArray(byte[] arr)
+        {
+            var stream = new MemoryStream(arr);
+            return ImageSource.FromStream(() => stream);
+        }
+        
         
         
         
