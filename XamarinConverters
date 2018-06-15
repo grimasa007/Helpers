@@ -1,0 +1,24 @@
+
+
+namespace Converters.Gallery
+{
+    public class PictureViewModel
+    {
+        
+        //converts crossmedia xamarin plugin MediaFile to ByteArray
+        private static byte[] FileToByteArray(MediaFile file)
+        {
+            byte[] arr;
+            using (var memoryStream = new MemoryStream())
+            {
+                file.GetStream().CopyTo(memoryStream);
+                arr = memoryStream.ToArray();
+            }
+            return arr;
+        }
+        
+        
+        
+        
+    }
+}
